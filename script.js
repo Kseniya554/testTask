@@ -70,6 +70,38 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSlider(currentIndex);
 });
 
+// Слайдер карточек
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderCards = document.querySelectorAll('.career__card');
+  const prevButton = document.querySelector('.career__slider-button.prev');
+  const nextButton = document.querySelector('.career__slider-button.next');
+  let currentIndex = 0;
+
+  function updateSlider(index) {
+      const offset = index * -100;
+      sliderCards.forEach((card) => {
+          card.style.transform = `translateX(${offset}%)`;
+      });
+  }
+
+  function showNextCard() {
+      currentIndex = (currentIndex + 1) % sliderCards.length;
+      updateSlider(currentIndex);
+  }
+
+  function showPrevCard() {
+      currentIndex = (currentIndex - 1 + sliderCards.length) % sliderCards.length;
+      updateSlider(currentIndex);
+  }
+
+  prevButton.addEventListener('click', showPrevCard);
+  nextButton.addEventListener('click', showNextCard);
+
+  // Initialize slider
+  updateSlider(currentIndex);
+});
+
+
 // Попап
 document.addEventListener('DOMContentLoaded', function () {
   const openPopupButtons = document.querySelectorAll('.open-popup');
