@@ -27,16 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
 
   function updateSlider(index) {
-    const offsetMultiplier = 145; // Ширина боковой картинки + половина центральной
+    const offsetMultiplier = 157.5; // Новое значение для правильного расчета расстояния между карточками
     sliderImages.forEach((image, i) => {
       const offset = (i - index) * offsetMultiplier;
 
       const scale = i === index ? 1 : 0.98;
       const translation =
-        i === index ? offset : i < index ? offset - 27.5 : offset + 27.5;
+        i === index ? 'translateX(-50%)' : `translateX(${offset}px)`;
 
       image.classList.toggle('active', i === index);
-      image.style.transform = `translateX(${translation}px) scale(${scale})`;
+      image.style.transform = translation;
+      image.style.zIndex = i === index ? 1 : 0; // Повышаем z-index активной карточки
     });
 
     dots.forEach((dot, i) => {
@@ -64,37 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider(currentIndex);
     });
   });
-
-  // Инициализация слайдера
-  updateSlider(currentIndex);
-});
-
-// Слайдер карточек
-document.addEventListener('DOMContentLoaded', () => {
-  const sliderInner = document.querySelector('.career__slider-inner');
-  const sliderCards = document.querySelectorAll('.career__card');
-  const prevButton = document.querySelector('.career__slider-button.prev');
-  const nextButton = document.querySelector('.career__slider-button.next');
-  let currentIndex = 0;
-
-  function updateSlider(index) {
-    const cardWidth = sliderCards[0].offsetWidth;
-    const offset = -index * cardWidth;
-    sliderInner.style.transform = `translateX(${offset}px)`;
-  }
-
-  function showNextCard() {
-    currentIndex = (currentIndex + 1) % sliderCards.length;
-    updateSlider(currentIndex);
-  }
-
-  function showPrevCard() {
-    currentIndex = (currentIndex - 1 + sliderCards.length) % sliderCards.length;
-    updateSlider(currentIndex);
-  }
-
-  prevButton.addEventListener('click', showPrevCard);
-  nextButton.addEventListener('click', showNextCard);
 
   // Инициализация слайдера
   updateSlider(currentIndex);
