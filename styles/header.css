@@ -1,0 +1,40 @@
+.header{
+    /* background-color: #111311; */
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    max-width: 991px;
+    justify-content: space-between;
+}
+
+.header__button{
+    background-image: url(../images/menu.svg);
+    width: 36px;
+    height: 36px;
+    background-color: inherit;
+    border: none;
+}
+
+.header__logo{
+    width: 59.13px;
+    height: 30px;
+    margin-left: 10%;
+    align-self: center;
+}
+
+.header__numbers{
+    margin: 0;
+    height: 30px;
+    align-self: center;
+}
+
+.header__number{
+    color: #FFFFFF;
+    margin: 0;
+    font-family: Inter;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
+}

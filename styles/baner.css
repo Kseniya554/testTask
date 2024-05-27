@@ -1,0 +1,51 @@
+.baner {
+    height: 500px;
+    background-image: url('../images/image.png');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.baner__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+.baner__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.78px;
+    margin: 0;
+}
+
+.baner__button {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    background-color: #DD3037;
+    border-radius: 30px;
+    border: none;
+    color: #FFFFFF;
+    margin-top: 35px;
+    display: flex;
+    width: 200px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
